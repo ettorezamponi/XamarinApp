@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Progetto3.Informazioni">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="lido4.jpg"></Image>
+
+            <Label Text="Il Papeete Beach offre tutti i servizi di cui un ospite  può necessitare, lettini singoli, lettini con ombrellone aree riservate, bar, chiringuito, ristoranti per eventi aziendali e happining. Papeete offre la soluzione ad ogni esigenza per vivere la spiaggia. Oltre a lettini ed ombrelloni l'offerta è ricca di soluzioni studiate per rendere unico il soggiorno al Beach club."
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <Image Source="papete_location.jpg"></Image>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image x:Name="wifi" Source="ic_wifi.png" Grid.Row="1" Grid.Column="0" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="wifitap"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image x:Name="park" Source="ic_park.png" Grid.Row="1" Grid.Column="1" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="parktap"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image x:Name="shower" Source="ic_shower.png" Grid.Row="1" Grid.Column="2" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="showertap"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image x:Name="restaurant" Source="ic_restaurant.png" Grid.Row="1" Grid.Column="3" >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="restauranttap"/>
+                </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

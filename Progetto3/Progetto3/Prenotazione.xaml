@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Progetto3.Prenotazione">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="vacanze_mare.jpg"></Image>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image x:Name="ombrellone0" Source="umbrella_free.png" Grid.Row="0" Grid.Column="0" Scale="0.5"></Image>
+                <Image x:Name="ombrellone1" Source="umbrella_free.png" Grid.Row="0" Grid.Column="1" Scale="0.5"></Image>
+                <Image x:Name="ombrellone2" Source="umbrella_free.png" Grid.Row="0" Grid.Column="2" Scale="0.5"></Image>
+                <Image x:Name="ombrellone3" Source="umbrella_free.png" Grid.Row="0" Grid.Column="3" Scale="0.5"></Image>
+                <Image x:Name="ombrellone4" Source="umbrella_free.png" Grid.Row="1" Grid.Column="0" Scale="0.5"></Image>
+                <Image x:Name="ombrellone5" Source="umbrella_free.png" Grid.Row="1" Grid.Column="1" Scale="0.5"></Image>
+                <Image x:Name="ombrellone6" Source="umbrella_free.png" Grid.Row="1" Grid.Column="2" Scale="0.5"></Image>
+                <Image x:Name="ombrellone7" Source="umbrella_free.png" Grid.Row="1" Grid.Column="3" Scale="0.5"></Image>
+                <Image x:Name="ombrellone8" Source="umbrella_free.png" Grid.Row="2" Grid.Column="0" Scale="0.5"></Image>
+                <Image x:Name="ombrellone9" Source="umbrella_free.png" Grid.Row="2" Grid.Column="1" Scale="0.5"></Image>
+                <Image x:Name="ombrellone10" Source="umbrella_free.png" Grid.Row="2" Grid.Column="2" Scale="0.5"></Image>
+                <Image x:Name="ombrellone11" Source="umbrella_free.png" Grid.Row="2" Grid.Column="3" Scale="0.5"></Image>
+                <Image x:Name="ombrellone12" Source="umbrella_free.png" Grid.Row="3" Grid.Column="0" Scale="0.5"></Image>
+                <Image x:Name="ombrellone13" Source="umbrella_free.png" Grid.Row="3" Grid.Column="1" Scale="0.5"></Image>
+                <Image x:Name="ombrellone14" Source="umbrella_free.png" Grid.Row="3" Grid.Column="2" Scale="0.5"></Image>
+                <Image x:Name="ombrellone15" Source="umbrella_free.png" Grid.Row="3" Grid.Column="3" Scale="0.5"></Image>
+            </Grid>
+
+            <DatePicker 
+            MinimumDate="01/01/2019"
+            MaximumDate="12/31/2019"
+            HorizontalOptions="Center"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Progetto3.Home">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="logomain.png"></Image>
+
+            <Label Text="Chalet Papeete, your lovely bathouse!"
+                   VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+            ></Label>
+
+
+            <Button x:Name="btnLogin"
+                    Clicked="ShowPopup"
+             BackgroundColor="LightGray"
+             BorderColor="Black"
+             Font="Impact"
+             FontSize="12"
+             HorizontalOptions="Center"
+             Margin="7"
+             Text="Login"
+            ></Button>
+
+            <Button x:Name="btnReg"
+                    Clicked="ShowPopup2"
+             BackgroundColor="LightGray"
+             BorderColor="Black"
+             Font="Impact"
+             FontSize="12"
+             HorizontalOptions="Center"
+             Margin="7"
+             Text="Registrati"
+            ></Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
