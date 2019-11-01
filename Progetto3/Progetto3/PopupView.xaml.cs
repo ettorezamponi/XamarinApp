@@ -46,7 +46,9 @@ namespace Progetto3
             if(ans=="1")
             {
                 DependencyService.Get<Toast>().Show("Utente loggato.");
-            }else
+                App.Current.Properties["Name"] = 1;
+            }
+            else
             {
                 DisplayAlert("Attenzione", "I dati inseriti sono errati", "Ok");
             }
