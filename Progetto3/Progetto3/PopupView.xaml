@@ -11,11 +11,11 @@
                  VerticalOptions="Center">
         <StackLayout>
             <Label Text="Username"></Label>
-            <Entry FontSize="30"></Entry>
+            <Entry x:Name="entryUsername2" FontSize="30"></Entry>
         </StackLayout>
         <StackLayout>
             <Label Text="Password"></Label>
-            <Entry FontSize="30"></Entry>
+            <Entry x:Name="entryPassword2" FontSize="30"></Entry>
         </StackLayout>
         <Button BackgroundColor="DodgerBlue"
                 FontSize="30"

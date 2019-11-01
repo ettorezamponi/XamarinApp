@@ -10,72 +10,50 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 namespace Progetto3
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class PopupView2 : PopupPage
-	{
-		public PopupView2 ()
-		{
-			InitializeComponent ();
-		}
-        void Reg_Clicked(object o, System.EventArgs e)
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class PopupView2 : PopupPage
+    {
+        public PopupView2()
+        {
+            InitializeComponent();
+        }
+        public async void Reg_Clicked(object o, System.EventArgs e)
         {
             PopupNavigation.Instance.PopAsync(true);
-            ServerRequest request = new ServerRequest(this,"http://programmazionemobile.altervista.org/aggiungi_utente_post.php");
-            request.SetUtentePost(new Utente(-1, entryUsername.Text.ToString(), entryPassword.Text.ToString()));
-            
-        }
-        
-        public class Utente
-        {
-            public int Id { get; set; }
-            public string Username { get; set; }
-            public string Password { get; set; }
-            
-            public Utente (int id, string username, string password)
-            {
-                Id = id;
-                Username = username;
-                Password = password;
 
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                await DisplayAlert("Attenzione", "Non sei connesso a internet", "Ok");
             }
-        }
-
-        class ServerRequest
-        {
-            private string URL;
-            private HttpClient _client;
-            private PopupView2 popupview2;
-
-            public ServerRequest(PopupView2 popupview2, string URL)
+            else
             {
-                this.popupview2 = popupview2;
-                this.URL = URL;
-                this._client = new HttpClient();
-            }
-
-            public async void SetUtentePost(Utente ut)
-            {
-                HttpContent formcontent = new FormUrlEncodedContent(new[]
+                if (string.IsNullOrEmpty(entryUsername.Text) || string.IsNullOrEmpty(entryPassword.Text) || string.IsNullOrEmpty(entryEmail.Text))
                 {
-                new KeyValuePair<string,string>("username",ut.Username),
-                new KeyValuePair<string, string>("password",ut.Password)
-            });
-
-                var response = await _client.PostAsync(URL, formcontent);
-                if (response.IsSuccessStatusCode)
+                    await DisplayAlert("Attenzione", "Riempi tutti i campi", "Ok");
+                }
+                else
                 {
-                    string responseText = response.Content.ReadAsStringAsync().Result.ToString();
-                    //popupview2.Insert_Result(responseText);
-                } else
-                {
-                    Debug.WriteLine("Error while inserting User in Post");
+                    ServerRequest2 request = new ServerRequest2(this, "http://programmazionemobile.altervista.org/aggiungi_utente_post.php");
+                    request.SetUtentePost(new Utente(-1, entryUsername.Text.ToString(), entryPassword.Text.ToString(), entryEmail.Text.ToString()));
                 }
             }
+
         }
 
- 
+        public void Insert_Result2(string ans)
+        {
+            if (ans == "1")
+            {
+                DependencyService.Get<Toast>().Show("Registrazione effettuata.");
+            }
+            else
+            {
+                DisplayAlert("Attenzione", "I dati inseriti sono errati", "Ok");
+            }
+        }
     }
 }

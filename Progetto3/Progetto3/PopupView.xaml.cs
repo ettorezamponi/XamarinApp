@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 namespace Progetto3
 {
@@ -19,10 +20,36 @@ namespace Progetto3
 			InitializeComponent ();
 		}
 
-        void Log_Clicked(object sender, System.EventArgs e)
+       public async void Log_Clicked(object sender, System.EventArgs e)
         {
             PopupNavigation.Instance.PopAsync(true);
+
+            if(Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                await DisplayAlert("Attenzione", "Non sei connesso a internet", "Ok");
+            } else
+            {
+                if(string.IsNullOrEmpty(entryUsername2.Text) || string.IsNullOrEmpty(entryPassword2.Text))
+                {
+                    await DisplayAlert("Attenzione", "Riempi tutti i campi", "Ok");
+                } else
+                {
+                    ServerRequest request = new ServerRequest(this, "http://programmazionemobile.altervista.org/login.php");
+                    request.Login(entryUsername2.Text.ToString(), entryPassword2.Text.ToString());
+                }
+            }
+
         }
 
+        public void Insert_Result(string ans)
+        {
+            if(ans=="1")
+            {
+                DependencyService.Get<Toast>().Show("Utente loggato.");
+            }else
+            {
+                DisplayAlert("Attenzione", "I dati inseriti sono errati", "Ok");
+            }
+        }
 	}
 }
