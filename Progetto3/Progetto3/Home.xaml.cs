@@ -18,11 +18,11 @@ namespace Progetto3
 			InitializeComponent ();
 		}
 
-        private void ShowPopup(object sender,EventArgs e)
+        private void ShowPopup(object sender,EventArgs e) //popuplogin
         {
             PopupNavigation.Instance.PushAsync(new PopupView());
         }
-        private void ShowPopup2(object sender,EventArgs e)
+        private void ShowPopup2(object sender,EventArgs e) //popupregistrazione
         {
             PopupNavigation.Instance.PushAsync(new PopupView2());
         }

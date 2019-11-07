@@ -23,7 +23,7 @@ namespace Progetto3.Droid
     {
         public Database_Android() { }
 
-        public SQLiteConnection DBconnect()
+        public SQLiteConnection DBConnect()
         {
             var filename = "UmbrellaSQLite.db3";
             string folder =
@@ -32,5 +32,6 @@ namespace Progetto3.Droid
             var connection = new SQLiteConnection(path);
             return connection;
         }
+
     }
 }

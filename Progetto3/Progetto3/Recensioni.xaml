@@ -4,9 +4,10 @@
              x:Class="Progetto3.Recensioni">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Button x:Name="ButtonRecensioni" 
+                    Text="Clicca qui per inserire una recensione"
+                    
+                    ></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

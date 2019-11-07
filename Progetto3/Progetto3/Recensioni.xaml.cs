@@ -15,6 +15,7 @@ namespace Progetto3
 		public Recensioni ()
 		{
 			InitializeComponent ();
+            //C'è da implementare una list view penso
 		}
 	}
 }
