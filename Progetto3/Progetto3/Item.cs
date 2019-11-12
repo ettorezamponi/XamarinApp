@@ -5,13 +5,13 @@ using System.Text;
 
 namespace Progetto3
 {
-    [Table("Umbrella")]
+    [Table("Item")]
     public class Item 
     {
-        [PrimaryKey,AutoIncrement]
+        [PrimaryKey]
         [Column("id")]
         public int id { get; set; }
         [Column("Value")]
-        public Boolean value { get; set; }
+        public int value { get; set; }
     }
 }

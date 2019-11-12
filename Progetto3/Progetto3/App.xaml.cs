@@ -9,9 +9,15 @@ namespace Progetto3
     {
         public App()
         {
+            if (!Application.Current.Properties.ContainsKey("BlockPref"))
+            {
+                Application.Current.Properties["BlockPref"] = 0;
+                Database DB = new Database();
+                DB.Riempi2();
+            }
             InitializeComponent();
-
             MainPage = new MainPage();
+
         }
 
         protected override void OnStart()
