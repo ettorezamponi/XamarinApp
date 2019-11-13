@@ -24,72 +24,72 @@
                         <TapGestureRecognizer Tapped="Libero2"/>
                     </Image.GestureRecognizers>
                 </Image>
-                <Image x:Name="ombrellone3" Source="umbrella_free.png" Grid.Row="0" Grid.Column="2" Scale="0.5">
+                <Image x:Name="ombrellone3"  Grid.Row="0" Grid.Column="2" Scale="0.5">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Libero3"/>
                     </Image.GestureRecognizers>
                 </Image>
-                <Image x:Name="ombrellone4" Source="umbrella_free.png" Grid.Row="0" Grid.Column="3" Scale="0.5">
+                <Image x:Name="ombrellone4"  Grid.Row="0" Grid.Column="3" Scale="0.5">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Libero4"/>
                     </Image.GestureRecognizers>
                 </Image>
-                <Image x:Name="ombrellone5" Source="umbrella_free.png" Grid.Row="1" Grid.Column="0" Scale="0.5">
+                <Image x:Name="ombrellone5"  Grid.Row="1" Grid.Column="0" Scale="0.5">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Libero5"/>
                     </Image.GestureRecognizers>
                 </Image>
-                <Image x:Name="ombrellone6" Source="umbrella_free.png" Grid.Row="1" Grid.Column="1" Scale="0.5">
+                <Image x:Name="ombrellone6"  Grid.Row="1" Grid.Column="1" Scale="0.5">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Libero6"/>
                     </Image.GestureRecognizers>
                 </Image>
-                <Image x:Name="ombrellone7" Source="umbrella_free.png" Grid.Row="1" Grid.Column="2" Scale="0.5">
+                <Image x:Name="ombrellone7"  Grid.Row="1" Grid.Column="2" Scale="0.5">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Libero7"/>
                     </Image.GestureRecognizers>
                 </Image>
-                <Image x:Name="ombrellone8" Source="umbrella_free.png" Grid.Row="1" Grid.Column="3" Scale="0.5">
+                <Image x:Name="ombrellone8"  Grid.Row="1" Grid.Column="3" Scale="0.5">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Libero8"/>
                     </Image.GestureRecognizers>
                 </Image>
-                <Image x:Name="ombrellone9" Source="umbrella_free.png" Grid.Row="2" Grid.Column="0" Scale="0.5">
+                <Image x:Name="ombrellone9"  Grid.Row="2" Grid.Column="0" Scale="0.5">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Libero9"/>
                     </Image.GestureRecognizers>
                 </Image>
-                <Image x:Name="ombrellone10" Source="umbrella_free.png" Grid.Row="2" Grid.Column="1" Scale="0.5">
+                <Image x:Name="ombrellone10"  Grid.Row="2" Grid.Column="1" Scale="0.5">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Libero10"/>
                     </Image.GestureRecognizers>
                 </Image>
-                <Image x:Name="ombrellone11" Source="umbrella_free.png" Grid.Row="2" Grid.Column="2" Scale="0.5">
+                <Image x:Name="ombrellone11"  Grid.Row="2" Grid.Column="2" Scale="0.5">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Libero11"/>
                     </Image.GestureRecognizers>
                 </Image>
-                <Image x:Name="ombrellone12" Source="umbrella_free.png" Grid.Row="2" Grid.Column="3" Scale="0.5">
+                <Image x:Name="ombrellone12"  Grid.Row="2" Grid.Column="3" Scale="0.5">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Libero12"/>
                     </Image.GestureRecognizers>
                 </Image>
-                <Image x:Name="ombrellone13" Source="umbrella_free.png" Grid.Row="3" Grid.Column="0" Scale="0.5">
+                <Image x:Name="ombrellone13"  Grid.Row="3" Grid.Column="0" Scale="0.5">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Libero13"/>
                     </Image.GestureRecognizers>
                 </Image>
-                <Image x:Name="ombrellone14" Source="umbrella_free.png" Grid.Row="3" Grid.Column="1" Scale="0.5">
+                <Image x:Name="ombrellone14"  Grid.Row="3" Grid.Column="1" Scale="0.5">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Libero14"/>
                     </Image.GestureRecognizers>
                 </Image>
-                <Image x:Name="ombrellone15" Source="umbrella_free.png" Grid.Row="3" Grid.Column="2" Scale="0.5">
+                <Image x:Name="ombrellone15"  Grid.Row="3" Grid.Column="2" Scale="0.5">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Libero15"/>
                     </Image.GestureRecognizers>
                 </Image>
-                <Image x:Name="ombrellone16" Source="umbrella_free.png" Grid.Row="3" Grid.Column="3" Scale="0.5">
+                <Image x:Name="ombrellone16"  Grid.Row="3" Grid.Column="3" Scale="0.5">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Libero16"/>
                     </Image.GestureRecognizers>

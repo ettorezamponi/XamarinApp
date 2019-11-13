@@ -23,16 +23,16 @@ namespace Progetto3
         {
             HttpContent formcontent = new FormUrlEncodedContent(new[]
             {
-                new KeyValuePair<string,string>("username",ut.Username),
-                new KeyValuePair<string, string>("password",ut.Password),
                 new KeyValuePair<string,string>("email",ut.Email),
-                //Potrebbe mancare l'id?
+                new KeyValuePair<string, string>("username",ut.Username),
+                new KeyValuePair<string,string>("password",ut.Password),
+
             });
 
             var response = await _client2.PostAsync(URL, formcontent);
             if (response.IsSuccessStatusCode)
             {
-                string responseText = response.Content.ReadAsStringAsync().Result.ToString();
+                string responseText = response.Content.ReadAsStringAsync().Result.ToString(); //responseText è vuoto
                 popupView2.Insert_Result2(responseText);
                 Debug.WriteLine("Inserimento corretto");
             }
