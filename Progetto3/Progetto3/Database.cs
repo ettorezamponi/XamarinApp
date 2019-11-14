@@ -4,6 +4,7 @@ using System.IO;
 using System.Text;
 using Xamarin.Forms;
 using SQLite;
+using System.Threading.Tasks;
 
 namespace Progetto3
 {
@@ -48,6 +49,46 @@ namespace Progetto3
             InsertOmbrelloni(14, 0);
             InsertOmbrelloni(15, 0);
             InsertOmbrelloni(16, 0);        
+        }
+    }
+
+    public class TextDatabase
+    {
+        readonly SQLiteAsyncConnection _database;
+
+        public TextDatabase(string dbPath)
+        {
+            _database = new SQLiteAsyncConnection(dbPath);
+            _database.CreateTableAsync<Review>().Wait();
+        }
+
+        public Task<List<Review>> GetReviewsAsync()
+        {
+            return _database.Table<Review>().ToListAsync();
+        }
+
+        public Task<Review> GetReviewAsync(int id)
+        {
+            return _database.Table<Review>()
+                            .Where(i => i.ID == id)
+                            .FirstOrDefaultAsync();
+        }
+
+        public Task<int> SaveReviewAsync(Review review)
+        {
+            if (review.ID != 0)
+            {
+                return _database.UpdateAsync(review);
+            }
+            else
+            {
+                return _database.InsertAsync(review);
+            }
+        }
+
+        public Task<int> DeleteReviewAsync(Review review)
+        {
+            return _database.DeleteAsync(review);
         }
     }
 }

@@ -15,7 +15,50 @@ namespace Progetto3
 		public Recensioni ()
 		{
 			InitializeComponent ();
-            //C'è da implementare una list view penso
 		}
-	}
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            listView.ItemsSource = await App.Database.GetReviewsAsync();
+        }
+
+        async void OnReviewAddedClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ReviewPage
+            {
+                BindingContext = new Review()
+            });
+        }
+
+        async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem != null)
+            {
+                await Navigation.PushAsync(new ReviewPage
+                {
+                    BindingContext = e.SelectedItem as Review
+                });
+            }
+        }
+    }
+
+    internal class ReviewPage : Page
+    {
+      
+            async void OnSaveButtonClicked(object sender, EventArgs e)
+            {
+                var note = (Review)BindingContext;
+                await App.Database.SaveReviewAsync(note);
+                await Navigation.PopAsync();
+            }
+
+            async void OnDeleteButtonClicked(object sender, EventArgs e)
+            {
+                var note = (Review)BindingContext;
+                await App.Database.DeleteReviewAsync(note);
+                await Navigation.PopAsync();
+            }
+     }
 }

@@ -14,4 +14,11 @@ namespace Progetto3
         [Column("Value")]
         public int value { get; set; }
     }
+
+    public class Review
+    {
+        [PrimaryKey, AutoIncrement]
+        public int ID { get; set; }
+        public string Text { get; set; }
+    }
 }

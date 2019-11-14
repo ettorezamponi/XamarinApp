@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,6 +8,19 @@ namespace Progetto3
 {
     public partial class App : Application
     {
+        static TextDatabase database;
+        public static TextDatabase Database
+        {
+            get
+            {
+                if (database==null)
+                {
+                    database = new TextDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "UmbrellaSQLite.db3"));
+                }
+                return database;
+            }
+        }
+
         public App()
         {
             if (!Application.Current.Properties.ContainsKey("BlockPref"))
@@ -17,7 +31,7 @@ namespace Progetto3
             }
             InitializeComponent();
             MainPage = new MainPage();
-
+            // MainPage = new NavigationPage(new NotesPage());
         }
 
         protected override void OnStart()

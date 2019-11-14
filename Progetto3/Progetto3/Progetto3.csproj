@@ -24,6 +24,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Remove="MyListViewPage.xaml" />
+    <EmbeddedResource Remove="Prenotazione %28copia%29.xaml" />
+    <EmbeddedResource Remove="MyPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Update="Home.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -45,5 +50,24 @@
     <EmbeddedResource Update="Recensioni.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="NoteEntryPage.cs" />
+    <Compile Remove="MyListViewPage.xaml.cs" />
+    <Compile Remove="ReviewEntryPage.cs" />
+    <Compile Remove="MyPage.cs" />
+    <Compile Remove="EmptyInterface.cs" />
+    <Compile Remove="Prenotazione %28copia%29.xaml.cs" />
+    <Compile Remove="ReviewEntryPage.xaml.cs" />
+    <Compile Remove="ReviewPage.222xaml.cs" />
+    <Compile Remove="MyPage.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="EmptyXmlFile.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="ReviewPage.xaml.cs">
+      <DependentUpon>ReviewPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>
