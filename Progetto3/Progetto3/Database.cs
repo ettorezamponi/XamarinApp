@@ -52,43 +52,43 @@ namespace Progetto3
         }
     }
 
-    public class TextDatabase
+    public class NoteDatabase
     {
         readonly SQLiteAsyncConnection _database;
 
-        public TextDatabase(string dbPath)
+        public NoteDatabase(string dbPath)
         {
             _database = new SQLiteAsyncConnection(dbPath);
-            _database.CreateTableAsync<Review>().Wait();
+            _database.CreateTableAsync<Note>().Wait();
         }
 
-        public Task<List<Review>> GetReviewsAsync()
+        public Task<List<Note>> GetNotesAsync()
         {
-            return _database.Table<Review>().ToListAsync();
+            return _database.Table<Note>().ToListAsync();
         }
 
-        public Task<Review> GetReviewAsync(int id)
+        public Task<Note> GetNotesAsync(int id)
         {
-            return _database.Table<Review>()
+            return _database.Table<Note>()
                             .Where(i => i.ID == id)
                             .FirstOrDefaultAsync();
         }
 
-        public Task<int> SaveReviewAsync(Review review)
+        public Task<int> SaveNoteAsync(Note note)
         {
-            if (review.ID != 0)
+            if (note.ID != 0)
             {
-                return _database.UpdateAsync(review);
+                return _database.UpdateAsync(note);
             }
             else
             {
-                return _database.InsertAsync(review);
+                return _database.InsertAsync(note);
             }
         }
 
-        public Task<int> DeleteReviewAsync(Review review)
+        public Task<int> DeleteNoteAsync(Note note)
         {
-            return _database.DeleteAsync(review);
+            return _database.DeleteAsync(note);
         }
     }
 }

@@ -11,8 +11,6 @@ namespace Progetto3
 {
     public partial class ReviewEntryPage : ContentPage
     {
-        
-
         async void OnSaveButtonClicked(object sender, EventArgs e)
         {
             var note = (Review)BindingContext;

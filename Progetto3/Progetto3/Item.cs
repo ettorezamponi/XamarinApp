@@ -15,7 +15,7 @@ namespace Progetto3
         public int value { get; set; }
     }
 
-    public class Review
+    public class Note
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }

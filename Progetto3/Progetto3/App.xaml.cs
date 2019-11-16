@@ -8,14 +8,14 @@ namespace Progetto3
 {
     public partial class App : Application
     {
-        static TextDatabase database;
-        public static TextDatabase Database
+        static NoteDatabase database;
+        public static NoteDatabase Database
         {
             get
             {
                 if (database==null)
                 {
-                    database = new TextDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "UmbrellaSQLite.db3"));
+                    database = new NoteDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "UmbrellaSQLite.db3"));
                 }
                 return database;
             }

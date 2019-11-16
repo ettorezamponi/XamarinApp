@@ -16,7 +16,19 @@ namespace Progetto3
 		public Home ()
 		{
 			InitializeComponent ();
-		}
+            btnLogin = this.FindByName<Button>("btnLogin");
+            btnReg = this.FindByName<Button>("btnReg");
+            if (Application.Current.Properties.ContainsKey("Name"))
+            {
+                btnLogin.IsVisible = false;
+                btnReg.IsVisible = false;
+            }
+            else
+            {
+                btnLogin.IsVisible = true;
+                btnReg.IsVisible = true;
+            }
+        }
 
         private void ShowPopup(object sender,EventArgs e) //popuplogin
         {
