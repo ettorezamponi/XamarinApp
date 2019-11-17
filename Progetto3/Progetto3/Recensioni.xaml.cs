@@ -1,12 +1,14 @@
-﻿using System;
+﻿using Rg.Plugins.Popup.Services;
+using SQLite;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Rg.Plugins.Popup.Services;
 
 namespace Progetto3
 {
@@ -15,33 +17,36 @@ namespace Progetto3
     {
         public Recensioni()
         {
+            database = DependencyService.Get<IDatabase>().DBConnect();
+            database.CreateTable<Recensione>();
+            var reviews = database.Table<Recensione>().ToList();
             InitializeComponent();
+            reviewslist.ItemsSource = reviews;
         }
 
-        protected override async void OnAppearing()
-        {
-            base.OnAppearing();
+        protected SQLiteConnection database;
 
-            listView.ItemsSource = await App.Database.GetNotesAsync();
-        }
-
-        async void OnNoteAddedClicked(object sender, EventArgs e)
+        public void new_recensione(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new NoteEntryPage
+            if (Application.Current.Properties.ContainsKey("Name"))
             {
-                BindingContext = new Note()
-            });
-        }
-
-        async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            if (e.SelectedItem != null)
-            {
-                await Navigation.PushAsync(new NoteEntryPage
-                {
-                    BindingContext = e.SelectedItem as Note
-                });
+                PopupNavigation.Instance.PushAsync(new PopupRecensioni());
+                database = DependencyService.Get<IDatabase>().DBConnect();
+                database.CreateTable<Recensione>();
+                var reviews = database.Table<Recensione>().ToList();
             }
+            else
+            {
+                DependencyService.Get<Toast>().Show("Devi essere registrato per inserire una recensione");
+            }
+        }
+
+        public void new_pressed(object sender, EventArgs e)
+        {
+            database = DependencyService.Get<IDatabase>().DBConnect();
+            database.CreateTable<Recensione>();
+            var reviews = database.Table<Recensione>().ToList();
+            reviewslist.ItemsSource = reviews;
         }
     }
 }

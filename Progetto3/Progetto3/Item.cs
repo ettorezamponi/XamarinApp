@@ -6,7 +6,7 @@ using System.Text;
 namespace Progetto3
 {
     [Table("Item")]
-    public class Item 
+    public class Item
     {
         [PrimaryKey]
         [Column("id")]
@@ -15,10 +15,14 @@ namespace Progetto3
         public int value { get; set; }
     }
 
-    public class Note
+    [Table("Recensione")]
+    public class Recensione
     {
         [PrimaryKey, AutoIncrement]
-        public int ID { get; set; }
-        public string Text { get; set; }
+        [Column("id")]
+        public int id { get; set; }
+        [Column("Description")]
+        public string description { get; set; }
     }
+
 }
