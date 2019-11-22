@@ -1,15 +1,18 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:local="clr-namespace:Progetto3;assembly=Progetto3"
             x:Class="Progetto3.MainPage"
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom"
-            BarBackgroundColor="Blue"
-            BarTextColor="White"
+            BarBackgroundColor= "#303F9F"
+            BarTextColor="White" 
+            SelectedTabColor="White"
+            BackgroundColor="White"
+            UnselectedTabColor="White"
             >
 
-    <local:Home Title="Home" Icon="ic_action_home.png"/>
+    <local:Home Title="Home" Icon="ic_action_home.png" />
 
     <local:Informazioni Title="Informazioni" Icon="ic_action_info.png"/>
 

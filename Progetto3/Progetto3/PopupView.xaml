@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Progetto3.PopupView"
              xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup">
-    <StackLayout Margin="12"
+    <StackLayout Margin="70"
                  Padding="24"
                  Spacing="24"
                  BackgroundColor="White"
@@ -19,7 +19,7 @@
         </StackLayout>
         <Button BackgroundColor="DodgerBlue"
                 FontSize="30"
-                Text="Login"
+                Text="   Login   "
                 TextColor="White"
                 Clicked="Log_Clicked">
         </Button>

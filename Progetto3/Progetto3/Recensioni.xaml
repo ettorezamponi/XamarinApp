@@ -6,20 +6,22 @@
         <StackLayout>
             <Button x:Name="ButtonRecensioni" 
                     Text="Aggiungi una recensione" 
-                    BackgroundColor="AliceBlue"
+                    TextColor="White"
+                    BackgroundColor="#303F9F"
                     Clicked="new_recensione"
              ></Button>
             <Button x:Name="Visualizza"
                     Text="Visualizza recensioni"
-                    BackgroundColor="AliceBlue"
+                    TextColor="White"
+                    BackgroundColor="#303F9F"
                     Clicked="new_pressed"
                     ></Button>
             
             <ListView x:Name="reviewslist"
-                      BackgroundColor="AliceBlue">
+                      BackgroundColor="White">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding description}"/>
+                        <TextCell Text="{Binding description}" TextColor="Black"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

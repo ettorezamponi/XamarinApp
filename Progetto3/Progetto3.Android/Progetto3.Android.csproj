@@ -90,6 +90,10 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\drawable\ic_restaurant.png" />
+    <AndroidResource Include="Resources\drawable\ic_shower.png" />
+    <AndroidResource Include="Resources\drawable\ic_park.png" />
+    <AndroidResource Include="Resources\drawable\ic_wifi.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />
@@ -123,18 +127,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\papete_location.JPG" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ic_restaurant.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ic_park.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ic_shower.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ic_wifi.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\umbrella_busy.png" />
