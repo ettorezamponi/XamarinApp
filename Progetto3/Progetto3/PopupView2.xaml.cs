@@ -35,6 +35,10 @@ namespace Progetto3
                 {
                     await DisplayAlert("Attenzione", "Riempi tutti i campi", "Ok");
                 }
+                if (entryUsername.Text.Contains('=') || entryPassword.Text.Contains('='))
+                {
+                    DependencyService.Get<Toast>().Show("Non puoi registrarti immettendo caratteri speciali");
+                }
                 else
                 {
                     ServerRequest2 request = new ServerRequest2(this, "http://programmazionemobile.altervista.org/aggiungi_utente_post.php");

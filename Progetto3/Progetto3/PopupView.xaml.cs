@@ -29,10 +29,15 @@ namespace Progetto3
                 await DisplayAlert("Attenzione", "Non sei connesso a internet", "Ok");
             } else
             {
-                if(string.IsNullOrEmpty(entryUsername2.Text) || string.IsNullOrEmpty(entryPassword2.Text))
+                if (string.IsNullOrEmpty(entryUsername2.Text) || string.IsNullOrEmpty(entryPassword2.Text))
                 {
                     await DisplayAlert("Attenzione", "Riempi tutti i campi", "Ok");
-                } else
+                }
+                if(entryUsername2.Text.Contains('=') || entryPassword2.Text.Contains('='))
+                {
+                    DependencyService.Get<Toast>().Show("Alcuni caratteri non sono permessi");
+                }
+                else
                 {
                     ServerRequest request = new ServerRequest(this, "http://programmazionemobile.altervista.org/login.php");
                     request.Login(entryUsername2.Text.ToString(), entryPassword2.Text.ToString());
